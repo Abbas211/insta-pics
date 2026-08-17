@@ -11,12 +11,26 @@ und 1.91:1). Genau dafür existiert dieses Repository — mehr nicht.
 | Ordner | Inhalt |
 |---|---|
 | `posts/` | Feed-Grafiken 1080×1080, JPEG (Qualität 92) |
+| `reels/` | Reels 1080×1920, MP4 (H.264) + Cover als JPEG |
 
 ## URL-Schema
+
+Bilder über `raw.githubusercontent.com`:
 
 ```
 https://raw.githubusercontent.com/Abbas211/insta-pics/main/posts/<name>.jpg
 ```
+
+Videos **nicht** über `raw.githubusercontent.com` — der liefert MP4 als
+`application/octet-stream` aus, womit die Veröffentlichung scheitert. Stattdessen den
+jsDelivr-Spiegel desselben Repositories, der `video/mp4` setzt:
+
+```
+https://cdn.jsdelivr.net/gh/Abbas211/insta-pics@main/reels/<name>.mp4
+```
+
+> **Ersetzte Dateien nicht überschreiben, sondern neu benennen.** jsDelivr cacht pro Pfad;
+> gleicher Pfad mit neuem Inhalt kann noch die alte Fassung ausliefern.
 
 ## Herkunft
 
